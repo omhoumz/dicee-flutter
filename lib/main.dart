@@ -35,22 +35,27 @@ class _DicePageState extends State<DicePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Row(
-        children: <Widget>[
-          Expanded(
-            child: FlatButton(
-              onPressed: updateDiceNumber,
-              child: Image.asset('images/dice$leftDiceNumber.png'),
-            ),
+    return SafeArea(
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16.0),
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: FlatButton(
+                  onPressed: updateDiceNumber,
+                  child: Image.asset('images/dice$leftDiceNumber.png'),
+                ),
+              ),
+              Expanded(
+                child: FlatButton(
+                  onPressed: updateDiceNumber,
+                  child: Image.asset('images/dice$rightDiceNumber.png'),
+                ),
+              ),
+            ],
           ),
-          Expanded(
-            child: FlatButton(
-              onPressed: updateDiceNumber,
-              child: Image.asset('images/dice$rightDiceNumber.png'),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
